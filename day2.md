@@ -18,9 +18,9 @@
 
     * `FASTQ-Format` = bestehend aus vier Linien: SequenceID, Raw Sequence/Barcode, +, Phred Quality
 
-    3. **Workflow-Aufgaben**
+ 3. **Workflow-Aufgaben**
 
-    4. **Aufgabe 1**
+4. **Aufgabe 1**
 
     # WICHTIG: Micromamba muss aktiviert werden
     `micromamba activate 00_anvio`
@@ -37,12 +37,12 @@
     `mkdir -p` fastqc_out
     `mkdir -p` fastp_out
 
-    5. **Aufgabe 2**
+5. **Aufgabe 2**
     # WICHTIG: es muss dem System gesagt werden, dass es zum WORK-Ordner geht und wo lang es dann gehen soll
     ## hier wird die Qualitaet der Daten evaluiert
     `fastqc` ../metagenomics/0_raw_reads/*.fastq.gz -o fastqc_out
 
-    6. **Aufgabe 3**
+6. **Aufgabe 3**
     # Das vorgegebene Schema: fastp -i ? -I ? -o ? -O ? -t 6 -q 20 -h ? -R ?
     # erst muss wieder angegeben werden in welchen Ordner wir wollen
     `cd` $WORK/day2
@@ -50,7 +50,7 @@
     `fastp` `-i` ../metagenomics/0_raw_reads/BGR_130527_mapped_R1.fastq.gz `-I` ../metagenomics/0_raw_reads/BGR_130527_mapped_R2.fastq.gz `-o` fastp_out/BGR_130527_mapped_R2_R1_clean.fastq.gz `-O` fastp_out/BGR_130527_mapped_R2_R2_clean.fastq.gz `-t 6 -q 20` -h sample2.html -R "Sample2 Fastp Report"
     `fastp -i` ../metagenomics/0_raw_reads/BGR_130708_mapped_R1.fastq.gz -I ../metagenomics/0_raw_reads/BGR_130708_mapped_R2.fastq.gz -o fastp_out/BGR_130708_mapped_R2_R1_clean.fastq.gz -O fastp_out/BGR_130708_mapped_R2_R2_clean.fastq.gz -t 6 -q 20 -h sample3.html -R "Sample3 Fastp Report"
 
-    7. **Assembly**
+7. **Assembly**
     # megahit -1 ? -1 ? -1 ? -2 ? -2 ? -2 ? -o ? --min-contig-len 1000 --presets meta-large -m 0.85 -t 12     
  
     `megahit` -1 fastp_out/BGR_130305_mapped_R2_R1_clean.fastq.gz -1 fastp_out/BGR_130527_mapped_R2_R1_clean.fastq.gz -1 fastp_out/BGR_130708_mapped_R2_R1_clean.fastq.gz -2 fastp_out/BGR_130305_mapped_R2_R2_clean.fastq.gz -2 fastp_out/BGR_130527_mapped_R2_R2_clean.fastq.gz -2 fastp_out/BGR_130708_mapped_R2_R2_clean.fastq.gz -o assembly --min-contig-len 1000 --presets meta-large -m 0.85 -t 12 
