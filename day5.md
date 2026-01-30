@@ -1,38 +1,41 @@
 # what i learned today
 
-#Day1
-1. **Alggemeines zur Bioinformatik**
-    * woher kommen Daten?
-    * `GUI` (Graphical User Interface)
-    * `CLI` (Command Line Interface)
+#Day5
 
- 2. **Verschiedene Linux-Commands**   
-    * `echo` = gibt etwas aus
-    * `pwd` = gibt an wo wir grade sind
-    * `ls` = listet alle Informationen auf
-    * `mkdir` = erstellt ein neues Directory
-    * `cd` = change directory
-        * `cd ..` = geht ein verzeichnis nach oben
-    * ` --help` = gibt Hilfe zu einem Befehl und zeigt wie man es benutzt
-    * `file.txt` = erstellt eine Textdatei
-    * `mv` = verschiebe etwas
-    * `cp` = kopiere etwas
-    * `rm` = entferne etwas 
-         * `rm *` = entferne das was vorm stern steht
-    * `cat` = > (etwas wird ersetzt) >> (etwas wird hinzugefuegt)
-    * `wget` = donwnload etwas
-    * `gunzip und gzip` = etwas komprimieren/und nicht komprimieren
-    * `touch` = hinzufuegen
+## 1. Taxanomic Assignment
+- You will now add taxonomic annotations to your MAG.
+- Verknuepft die Single-Copy-Core-Gene in Ihrer Contigs-Datenbank mit taxonomischen Informationen.
 
-    3. **Tap Taste**
+`cd` $WORK
+`anvi-run-scg-taxonomy` -c day3/contigsdb_out/contigs.db -T 20 -P 2
 
-    4. **HPC (High Performance Cluster)**
-        * bash-Befehle
-        * qc = qualitiy Control
-        * `sbatch`= skript laufen lassen
-        * `squeue` = gucken ob alles durch ist
-        * `FOR LOOP` = for -- in ()
-                        do
-                        done
-        * `#` = mein Kommentar
+`-p` <profile>: Die Fusion PROFILE.db.
+`-c` <contigs>: Die contigs Datenbankdatei.
+`-C` <collection>: Geben Sie einen Namen fuer die Ausgabesammlung von Behaeltern.
+
+- Dieses Programm erstellt schnelle taxonomische Schaetzungen fuer Genome, Metagenome oder Bins, die in Ihrer Contigs-Datenbank gespeichert sind, unter Verwendung von Single-Copy-Core-Genen.
+- hier wird fuer jede Datei eine Text-Datein mit den relevanten Informationen erstellt
+
+`mkdir` -p day5
+`cd` $WORK/day5
+
+`anvi-estimate-scg-taxonomy` -c day3/contigsdb_out/contigs.db -p day3/profile_out/BGR_130305_profile/PROFILE.db --metagenome-mode --compute-scg-coverages --update-profile-db-with-taxonomy > temp130305.txt
+`anvi-estimate-scg-taxonomy` -c day3/contigsdb_out/contigs.db -p day3/profile_out/BGR_130527_profile/PROFILE.db --metagenome-mode --compute-scg-coverages --update-profile-db-with-taxonomy > temp130527.txt
+`anvi-estimate-scg-taxonomy` -c day3/contigsdb_out/contigs.db -p day3/profile_out/BGR_130708_profile/PROFILE.db --metagenome-mode --compute-scg-coverages --update-profile-db-with-taxonomy > temp130708.txt
+
+- Eine abschliessende Zusammenfassung, um umfassende Informationen ueber Ihre METABAT2-Behaelter zu erhalten
+- hier wird eine html datei bearbeitet, man kann dann die Taxonomy der Archaea sehen (!keine Durchführung des Interaktiven modus notwendig)
+
+`anvi-summarize` -p day3/profile_out/merged_profiles/PROFILE.db -c day3/contigsdb_out/contigs.db -o day5/SUMMARY_METABAT2_FINAL -C METABAT2
+
+
+## 2. Genome Dereplication
+
+
+anvi-dereplicate-genomes -i /PATH/TO/file.txt --program fastANI --similarity-threshold 0.95 -o ANI --log-file log_ANI -T 10
+
+## 3. Fragen zu Aufgabe 1
+
+**Haben Sie eine Artenzuordnung zu den zuvor identifizierten A R C H A E A erhalten?** = ja siehe Bild day5_taxonomy
+**Muss die HIGH-QUALITY-Zuordnung des Behaelters ueberarbeitet werden?** =
         
