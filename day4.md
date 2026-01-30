@@ -95,7 +95,7 @@ METABAT__13-contigs	1970	1893	261	species	0.89	0.85	0.1	0.37	1.04	0.85	0.72	True
 - How abundant are the Archaea MAGs, actually?
 `anvi-interactive` -p day3/profile_out/merged_profiles/PROFILE.db -c day3/contigsdb_out/contigs.db -C METABAT2
 
-## 8. Frage zu Aufgabe 7.h
+## 8. Frage zu Aufgabe 7.h 
 **How abundant (relatively) are the A r c h a e a bins in the 3 samples?**
        bins	 BGR_130305_sorted	BGR_130527_sorted	BGR_130708_sorted
     - METABAT__13 	1.76 	1.12 	0.57
