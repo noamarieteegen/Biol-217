@@ -43,7 +43,7 @@
 - Es wird ein Verzeichnis im Ordner WORK/day4 erstellt welcher refine_out heisst
 `mkdir` -p refine_out
 
-cd $WORK/day4/refine_out
+`cd` $WORK/day4/refine_out
 
 - Es wird ein Verzeichnis im Ordner WORK/day4/refine_out/METABAT__13 erstellt welcher gunc_out heisst
 `cd` $WORK/day4/refine_out/METABAT__13
