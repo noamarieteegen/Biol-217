@@ -1,6 +1,6 @@
 # what i learned today
 
-#DDay4
+#Day4
 
 - **Interactive**: 
         - $exit immer hinterher so kommt man daraus
