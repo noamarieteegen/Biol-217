@@ -38,7 +38,7 @@
 - Es wird ein Verzeichnis im Ordner WORK erstellt welcher day4 heisst
 `mkdir` -p day4
 
-cd $WORK/day4
+`cd` $WORK/day4
 
 - Es wird ein Verzeichnis im Ordner WORK/day4 erstellt welcher refine_out heisst
 `mkdir` -p refine_out
@@ -50,6 +50,7 @@ cd $WORK/day4/refine_out
 `mkdir -p` gunc_out
 
 `cd` $WORK
+
 - check for chimeras and potential contamination
 `gunc` run -i day4/refine_out/METABAT__13/METABAT__13-contigs.fa -r $WORK/databases/gunc/gunc_db_progenomes2.1.dmnd  --out_dir day4/refine_out/METABAT__13/gunc_out --detailed_output --threads 12
 
