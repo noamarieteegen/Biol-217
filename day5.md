@@ -32,7 +32,14 @@
 ## 2. Genome Dereplication
 
 
-anvi-dereplicate-genomes -i /PATH/TO/file.txt --program fastANI --similarity-threshold 0.95 -o ANI --log-file log_ANI -T 10
+`anvi-dereplicate-genomes` -i /PATH/TO/file.txt --program fastANI --similarity-threshold 0.95 -o ANI --log-file log_ANI -T 10
+`-i` txt file of your contigs
+`--program` specify the program anvio will use for dereplication (here fastANI)
+`--similarity-threshold` if two genomes have a similarity greater or equal to this threshold, they will belong to the same cluster
+`-o` output_folder
+`-O` output_folder/R2.fastq.gz output file
+`--log-file` name of the log file
+`-T` number of threads used
 
 ## 3. Fragen zu Aufgabe 1
 
