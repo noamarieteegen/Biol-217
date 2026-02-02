@@ -8,7 +8,8 @@
 **`CheckM`**
 **`CheckM2`**
 **`L50/N50`**
-****
+**`gbk`**
+**`gfa`**
 
 - andere micromamba aktivierungen beachten
 - ordnere so benennen - einfacher fuer die Pfade 
@@ -149,6 +150,7 @@ micromamba deactivate
 
 ## 12. Uberpruefung der Assembly Qualitaet mit CheckM2
 - Erstellen eines Output Ordners fuer checkM2
+- hier ist mein Genom gib mir alle informationen dazu
 `mkdir -p` $WORK/genomics/3_hybrid_assembly/checkm2_out
 
 - durchfuehren des CheckM2 Commands - input ist das fasta file des assmeblys und output soll hierbei in den neu erstellten Ordner fuer checkm2 ergebnisse
@@ -177,3 +179,11 @@ micromamba deactivate
 `multiqc -d` $WORK/genomics/ -o $WORK/genomics/6_multiqc
 
 - Multiqc: file:///run/user/745871/gvfs/sftp:host=caucluster.rz.uni-kiel.de/work_beegfs/sunam234/genomics/6_multiqc/multiqc_report.html
+
+
+## 16. Allgemein Fragen:
+**How good is the quality of genome?**
+**Why did we use Hybrid assembler?**
+**What is the difference between short and long reads?**
+**Did we use Single or Paired end reads? Why?**
+**Which classification was assigned to the genome. Is it trust worthy and why?**
