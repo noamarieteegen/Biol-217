@@ -175,6 +175,7 @@ micromamba deactivate
 `gtdbtk classify_wf` --cpus 1 --genome_dir $WORK/genomics/4_annotated_genome/ --out_dir $WORK/genomics/5_gtdb_classification --extension .fna --skip_ani_screen
 
 ## 15. MultiQC fuer die Verbindung aller Reporte
+- kombiniert alle qualitiys controls in einem 
 
 `multiqc -d` $WORK/genomics/ -o $WORK/genomics/6_multiqc
 
