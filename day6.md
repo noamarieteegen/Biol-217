@@ -48,8 +48,14 @@ done
 ## 4. Fragen zu schritt 1-3.
 
 **How Good is the read quality?**
+  - ist gut - liegt zwischen 20 und 30
+
 **How many reads before trimming and how many do you have now?**
+  - vorher: 3.279098 M
+  - nachher:	3.226784 M
+
 **Did the quality of the reads improve after trimming?**
+  - bei R1 und R2 ist die Qualitaet nach Trmming besser als vorher (siehe Screenshots day6_FastQC(cleaned))
 
 - Fastp-Report: file:///run/user/745871/gvfs/sftp:host=caucluster.rz.uni-kiel.de/work_beegfs/sunam234/genomics/1_short_reads_qc/fastp_out/sample1.html
 
@@ -92,7 +98,16 @@ done
  ## 8. Fragen zu Aufgabe 5-7.
 
 **How Good is the long reads quality?'**
+  - median_read_length 	4477.0
+  - n50 	22747.0
+  - NanoPlot Report zu beantwortung der Frage: file:///run/user/745871/gvfs/sftp:host=caucluster.rz.uni-kiel.de/work_beegfs/sunam234/genomics/2_long_reads_qc/3_nanoplot_cleaned/NanoPlot-report.html
+
 **How many reads before trimming and how many do you have now?**
+  - NanoPlot vor Trimming (nicht gecleanet): file:///run/user/745871/gvfs/sftp:host=caucluster.rz.uni-kiel.de/work_beegfs/sunam234/genomics/2_long_reads_qc/1_nanoplot_raw/NanoPlot-report.html
+  - Number of reads:  	15963
+
+  - NanoPlot Danach: file:///run/user/745871/gvfs/sftp:host=caucluster.rz.uni-kiel.de/work_beegfs/sunam234/genomics/2_long_reads_qc/3_nanoplot_cleaned/NanoPlot-report.html
+  - Number of reads:  	12446
 
 
 ## 9. Assembly des Genoms mit Unicycler
@@ -183,8 +198,21 @@ micromamba deactivate
 
 
 ## 16. Allgemein Fragen:
+
 **How good is the quality of genome?**
+   - bewertet durch N50 wert (hoeher = bessere Zusammenhaenge)
+
 **Why did we use Hybrid assembler?**
+  - kombiniert short und long reads
+  - long reads geben bessere zusammenhaenge (groessere scaffords)
+  - short reads geben hoehere genauigkeit 
+
 **What is the difference between short and long reads?**
+  - short reads: bsp illumina, sehr genau, 150-300 bp
+  - long reads: bsp. Nanopore, sehr lang bis zu 100000 bp, fehleranfaellig, gut fuer die erkennung der struktur des Genoms
+
 **Did we use Single or Paired end reads? Why?**
+  - Paired ends: lesen beide enden eines dna-fragments was eine bessere abdeckung und ein genaueres assembly ermoeglicht - helfen bei dem zusammenfuehren von contigs zu scaffords
+
 **Which classification was assigned to the genome. Is it trust worthy and why?**
+  - 

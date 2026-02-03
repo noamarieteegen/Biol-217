@@ -14,7 +14,7 @@
 `-C` <collection>: Geben Sie einen Namen fuer die Ausgabesammlung von Behaeltern.
 
 - Dieses Programm erstellt schnelle taxonomische Schaetzungen fuer Genome, Metagenome oder Bins, die in Ihrer Contigs-Datenbank gespeichert sind, unter Verwendung von Single-Copy-Core-Genen.
-- hier wird fuer jede Datei eine Text-Datein mit den relevanten Informationen erstellt
+- hier wird fuer jede Datei eine Text-Datein erstellt 
 
 `mkdir` -p day5
 `cd` $WORK/day5
@@ -23,26 +23,28 @@
 `anvi-estimate-scg-taxonomy` -c day3/contigsdb_out/contigs.db -p day3/profile_out/BGR_130527_profile/PROFILE.db --metagenome-mode --compute-scg-coverages --update-profile-db-with-taxonomy > temp130527.txt
 `anvi-estimate-scg-taxonomy` -c day3/contigsdb_out/contigs.db -p day3/profile_out/BGR_130708_profile/PROFILE.db --metagenome-mode --compute-scg-coverages --update-profile-db-with-taxonomy > temp130708.txt
 
-- Eine abschliessende Zusammenfassung, um umfassende Informationen ueber Ihre METABAT2-Behaelter zu erhalten
-- hier wird eine html datei bearbeitet, man kann dann die Taxonomy der Archaea sehen (!keine Durchführung des Interaktiven modus notwendig)
+- Eine abschliessende Zusammenfassung, um umfassende Informationen ueber Ihre METABAT2-Behaelter zu erhalten:
 
 `anvi-summarize` -p day3/profile_out/merged_profiles/PROFILE.db -c day3/contigsdb_out/contigs.db -o day5/SUMMARY_METABAT2_FINAL -C METABAT2
 
 
 ## 2. Genome Dereplication
 
-
 `anvi-dereplicate-genomes` -i /PATH/TO/file.txt --program fastANI --similarity-threshold 0.95 -o ANI --log-file log_ANI -T 10
-`-i` txt file of your contigs
-`--program` specify the program anvio will use for dereplication (here fastANI)
-`--similarity-threshold` if two genomes have a similarity greater or equal to this threshold, they will belong to the same cluster
-`-o` output_folder
-`-O` output_folder/R2.fastq.gz output file
-`--log-file` name of the log file
-`-T` number of threads used
+
 
 ## 3. Fragen zu Aufgabe 1
 
-**Haben Sie eine Artenzuordnung zu den zuvor identifizierten A R C H A E A erhalten?** = ja siehe Bild day5_taxonomy
-**Muss die HIGH-QUALITY-Zuordnung des Behaelters ueberarbeitet werden?** =
-        
+**Haben Sie eine Artenzuordnung zu den zuvor identifizierten Archaea erhalten?** 
+    - ja siehe Bild day5_taxonomy
+
+**Does the HIGH-QUALITY assignment of the bin need revision?**
+
+
+**How many species do you have in the dataset?**
+    - 3
+
+**Try to dereplicate again at 90% identity then at 80%identity. In your own words, explain the differences between the different %identities.**
+    - 95% = standard fuer Speziesgrenze - sehr aehnliche Genome werden zusammengefasst
+    - 90% = mehr Genome werden zusammengefasst - weniger Cluster, auch leicht unterschiedliche Spezies werden gut gruppiert
+    - 80% = noch mehr Zusammenfassung - noch weniger Cluster, auch unterschiedliche Spezies/Gattungen koennten gruppiert werden

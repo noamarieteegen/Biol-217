@@ -2,7 +2,7 @@
 
 #Day7
 
-ssh -X sunam234@caucluster.rz.uni-kiel.de
+
 
  ## Allgemein Theorie:
 **`Pangenomcs`**       
@@ -164,13 +164,26 @@ anvi-pan-genome -g V_jascida-GENOMES.db \
 ## 11. Fragen zu den Aufgaben
 
 **Werden Gene aufgrund von Sequenzaehnlichkeit oder funktionaler Annotation gruppiert?**
+    - beides
+    - im pangenom zunaechst nach sequenzaehnlichkeit (clustering), anschliessend eine funktionale annotation um jeden cluster eine biologische funktion zuzuweisen zu koennen
 
 **Wie erkennt man ein schlechtes Genom oder einen schlechten Bin in einem Genom?**
+    - Completness >90%
+    - Contamination <5% (redundancy als marker fuer zu viel fremdes dna material)
 
 **Verwenden Sie die Suchfunktion, um alle Gencluster den folgenden Bins zuzuordnen: Kerngenom, akzessorisches Genom, Singletons und Single Copy Core Genes (SCGs). Fuegen Sie dem Protokoll einen Screenshot Ihres Pangenoms bei.**
+    - Kerngenom: Gene die in allen Genomen vorkommen
+    - Akzessorisches Genom: Gene die nur in einigen Genomen vorkommen
+    - Singletons: Gene die nur in einem einzigen Genom vorkommen
+    - SCGs: Gene die einmal pro Genom vorkommen (oft Referenzmarker)
 
 **Wenn Sie dem Pangenom weitere Genome hinzufuegen, wie wuerde sich dies auf die Anzahl der Gencluster im Kerngenom und in den SCGs auswirken?**
+    - Kerngenom: Anzahl der Cluster wueder sinken, da mehr Genome bedeuten, dass weniger Gene in allen Genomen glichzeitig vorkommen
+    - SCGs: bleiben stabil - evolutionaer bedingt
+    - Akzessorische und Singletons wuerden zunehmen
 
 **Wuerden Sie aufgrund des ANI sagen, dass alle Genome zur selben Spezies gehoeren?**
+    - ANI groesser oder gleich 95% - Genome gehoehren zur selben Spezies
+    - ANI kleiner als 95% - es handelt sich um unterschiedliche Spezies
 
 
