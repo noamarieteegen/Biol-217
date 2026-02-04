@@ -38,19 +38,18 @@
 - Es wird ein Verzeichnis im Ordner WORK erstellt welcher day4 heisst
 `mkdir` -p day4
 
-`cd` $WORK/day4
+cd $WORK/day4
 
 - Es wird ein Verzeichnis im Ordner WORK/day4 erstellt welcher refine_out heisst
 `mkdir` -p refine_out
 
-`cd` $WORK/day4/refine_out
+cd $WORK/day4/refine_out
 
 - Es wird ein Verzeichnis im Ordner WORK/day4/refine_out/METABAT__13 erstellt welcher gunc_out heisst
 `cd` $WORK/day4/refine_out/METABAT__13
 `mkdir -p` gunc_out
 
 `cd` $WORK
-
 - check for chimeras and potential contamination
 `gunc` run -i day4/refine_out/METABAT__13/METABAT__13-contigs.fa -r $WORK/databases/gunc/gunc_db_progenomes2.1.dmnd  --out_dir day4/refine_out/METABAT__13/gunc_out --detailed_output --threads 12
 
@@ -95,11 +94,12 @@ METABAT__13-contigs	1970	1893	261	species	0.89	0.85	0.1	0.37	1.04	0.85	0.72	True
 - How abundant are the Archaea MAGs, actually?
 `anvi-interactive` -p day3/profile_out/merged_profiles/PROFILE.db -c day3/contigsdb_out/contigs.db -C METABAT2
 
-## 8. Frage zu Aufgabe 7.h 
+## 8. Frage zu Aufgabe 7.h
 **How abundant (relatively) are the A r c h a e a bins in the 3 samples?**
        bins	 BGR_130305_sorted	BGR_130527_sorted	BGR_130708_sorted
     - METABAT__13 	1.76 	1.12 	0.57
     - METABAT__33 	0.83 	0.01 	0.39
     - METABAT__34	0.79	0.28	0.39
 
-        
+
+    
