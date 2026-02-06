@@ -1,6 +1,5 @@
 # what i learned today
 
-ssh -X sunam234@caucluster.rz.uni-kiel.de 
 
 #Day9
 
